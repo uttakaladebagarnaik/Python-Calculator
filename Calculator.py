@@ -1,33 +1,43 @@
 print("""
 ================================================================================
-                              CALCULATOR
+                              CALCULATOR V2
 ================================================================================
 """)
 
-number1 = int(input("Please enter your number 1: "))
-number2 = int(input("Please enter your number 2: "))
+while True:
 
-print("""
+    print("""
 1. Addition '+'
 2. Subtraction '-'
 3. Multiplication '*'
 4. Division '/'
+5. Exit
 """)
 
-choice = int(input("Please select an operation (1-4): "))
+    choice = int(input("Please select an operation (1-5): "))
 
-if choice == 1:
-    print("Result =", number1 + number2)
+    if choice == 5:
+        print("Thank you for using the calculator!")
+        break
 
-elif choice == 2:
-    print("Result =", number1 - number2)
+    if choice < 1 or choice > 5:
+        print("Invalid choice! Please select between 1 and 5.")
+        continue
 
-elif choice == 3:
-    print("Result =", number1 * number2)
+    number1 = float(input("Please enter your number 1: "))
+    number2 = float(input("Please enter your number 2: "))
 
-elif choice == 4:
-    print("Result =", number1 / number2)
+    if choice == 1:
+        print("Result =", number1 + number2)
 
-else:
-    print("Invalid choice!")
+    elif choice == 2:
+        print("Result =", number1 - number2)
 
+    elif choice == 3:
+        print("Result =", number1 * number2)
+
+    elif choice == 4:
+        if number2 == 0:
+            print("Error: Cannot divide by zero!")
+        else:
+            print("Result =", number1 / number2)
